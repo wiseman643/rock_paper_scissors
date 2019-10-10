@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:900&display=swap');
+
+:root {
+  --primary-color: #7e0e63;
+  --dark-color: #333333;
+  --lighting-color: #f4f4f4;
+  --lose-color: #dc3545;
+  --win-color: #28a745;
+  --draw-color: #FFA500;
+  --modal-duration: 1s;
+}
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	line-height: 1.6;
+	color:   #003699;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+}
+
+.title{
+  font-family: "Poppins";
+  font-size: 4em;
+  font-size: calc(1em + 5vw);
+  font-weight: 700;
+  max-width: 14em;
+  color: #8A2387;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  background: -webkit-linear-gradient(to right, #F27121, #E94057, #8A2387);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #F27121, #E94057, #8A2387); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-position: right center;
+  background-size: 400% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: background-position 1500ms ease-out;
+}
+
+.title:hover {
+  background-position: left center;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.container {
+	max-width: 1100px;
+	margin: auto;
+	overflow: hidden;
+	padding: 0 2rem;
+	text-align: center;
+} 
+
+
+.restart-btn {
+  display: none;
+  background: var(--win-color);
+  color: #f4f4f4;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  margin-bottom: 1rem;
+}
+
+.restart-btn:hover {
+	background: var(--primary-color);
+	color: #fff;
+}
+
+.header {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.header h1 {
+	margin-bottom: 1rem;
+}
+
+.score {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	font-size: 1.2rem;
+	color: #fff;
+}
+
+.score p:first-child {
+	background: var(--primary-color);
+}
+
+.score p:last-child {
+	background: var(--dark-color);
+}
+
+.choices {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 2rem;
+	margin-top: 3rem;
+	text-align: center;
+}
+
+.choice {
+  cursor: pointer;
+}
+
+.choice:hover {
+	color: var(--primary-color);
+}
+
+.text-win {
+  color: var(--win-color);
+}
+
+.text-lose {
+  color: var(--lose-color);
+}
+
+.text-draw {
+  color: var(--draw-color);
+}
+
+@media(max-width: 700px) {
+  .choice {
+  	font-size: 110px; 	
+  }
+}
+
+@media (max-width: 500px) {
+  .choice {
+  	font-size: 80px;
+  }
+}
